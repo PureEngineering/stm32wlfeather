@@ -1,0 +1,20 @@
+
+menu "STM32WL gateway firmware configuration"
+
+config STM_GATEWAY_FW_VERSION_MAJOR
+	int "STM32WL gateway firmware major version"
+	default 1
+
+config STM_GATEWAY_FW_VERSION_MINOR
+	int "STM32WL gateway firmware minor version"
+	default 0
+
+config STM_GATEWAY_FW_VERSION_PATCH
+	int "STM32WL gateway firmware patch version"
+	default 0
+
+endmenu
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu

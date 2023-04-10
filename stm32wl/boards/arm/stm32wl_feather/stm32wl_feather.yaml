@@ -1,0 +1,14 @@
+identifier: stm32wl_feather
+name: STM32WL55CC Feather
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 64
+flash: 256
+supported:
+  - gpio
+  - i2c
+  - spi

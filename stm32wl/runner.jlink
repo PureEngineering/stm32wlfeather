@@ -1,0 +1,5 @@
+erase
+loadbin build/zephyr/zephyr.hex 0x20000000 
+r
+g
+exit

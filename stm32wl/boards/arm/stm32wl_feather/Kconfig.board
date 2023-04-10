@@ -1,0 +1,7 @@
+# STM32WL55CC Feather board configuration
+
+# Copyright (c) 2021 PureEngineering, LLC
+
+config BOARD_STM32WL_FEATHER
+	bool "STM32WL55CC Feather Development Board"
+	depends on SOC_STM32WL55XX

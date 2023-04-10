@@ -1,0 +1,3 @@
+build
+src/ota_bin.c
+ota.bin

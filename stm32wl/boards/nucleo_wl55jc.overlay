@@ -1,0 +1,17 @@
+/ {
+	aliases {
+		red-led = &green_led_3;
+		green-led = &green_led_2;
+		blue-led = &blue_led_1;
+		system-led = &green_led_3;
+		rpc-uart = &usart1;
+		uart = &lpuart1;
+	};
+};
+
+&usart1 {
+	pinctrl-0 = <&usart1_tx_pb6 &usart1_rx_pb7>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "okay";
+};
