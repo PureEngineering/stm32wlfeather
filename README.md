@@ -12,7 +12,7 @@ https://docs.zephyrproject.org/latest/develop/getting_started/index.html
 For ubuntu 22.04 users
 There is a ./runme.sh script one can use to build and flash the code more easily. 
 
-if using the uart instead of the SWD jtag the latest version of stm32flash is needed. (PA9 and PA10 pins need to be wired) (115200 8E1)
+if using the uart instead of the SWD jtag the latest version of stm32flash is needed or STM32CubeProgrammer. (PA9 and PA10 pins need to be wired) (115200 8E1)
 https://gitlab.com/stm32flash/stm32flash
 
 # Hardware
