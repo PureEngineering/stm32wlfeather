@@ -1,7 +1,8 @@
 # STM32WL Feather
 
+# Getting Started 
 
-# Setup 
+- Order a Board here: https://groupgets.com/campaigns/933
 
 Install Zephyr 3.3.0 https://github.com/zephyrproject-rtos/zephyr/releases/tag/v3.3.0
 Install West and compilers for all (or arm+risv V)
@@ -22,6 +23,7 @@ There is a ./runme.sh script one can use to build and flash the code more easily
 - On board Chip antenna for esp32-c3
 - stm32wl power control of the esp32-c3 for low power battery applications. 
 - ADC, DAC, SPI, UART, GPIO accessible on Feather Header. 
+- TC2030-CTX-NL JTAG connection
 - Optional BME688: temperature pressure humiditity, gas sensor, machine learning
 - Optional LIS2DTW12TR: accelerometer 
 - Optional Li-ion Battery connector
