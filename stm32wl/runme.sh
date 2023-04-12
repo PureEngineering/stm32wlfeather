@@ -4,7 +4,7 @@ env_description="setups the path for the toolchain"
 env()
 {
     export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
-    export ZEPHYR_SDK_INSTALL_DIR=~/zephyr-sdk-0.13.2
+    export ZEPHYR_SDK_INSTALL_DIR=~/zephyr-sdk-0.16.1
     source ~/$ZEPHYR_DIR/zephyr/zephyr-env.sh
 }
 
@@ -12,7 +12,6 @@ build_feather_description="does a full build with STM32WL-Feather board"
 build_feather()
 {
     env
-
     west build -b stm32wl_feather --pristine 
 }
 
@@ -20,7 +19,6 @@ build_nucleo_description="does a full build with Nucleo-WL55 board"
 build_nucleo()
 {
     env
-
     west build -b nucleo_wl55jc --pristine 
 }
 
@@ -36,7 +34,7 @@ flash()
 flash_manual_description="flash using jlinkexe"
 flash_manual()
 {
-    rebuild
+	build_feather
 	JLinkExe -device STM32WL55CC -if SWD -speed 4000 -autoconnect 1 -CommanderScript runner.jlink
 }
 
@@ -45,11 +43,11 @@ info_report_description="create a report of the board info"
 info_report()
 {
     evn
-    build_humgw
+    build_feather
     west build -t ram_report
 }
 
-copy_build_to_release_description="create a report of the board info"
+copy_build_to_release_description="copy bin to release"
 copy_build_to_release()
 {
     env
