@@ -15,11 +15,11 @@ There is a ./runme.sh script one can use to build and flash the code more easily
 - Feather sized: 2.0" x 0.9" x 0.3" (51mm x 23mm x 8mm) without headers
 - esp32-c3: USB<->uart, WiFi, BLE
 - stm32wl55: 64kb ram, 256 kB flash, Low Power Arm Core, Lora, (G)FSK, (G)MSK, BPSK
-- on board 3.3V regulator
+- On board 3.3V regulator
 - USB-C directly to esp32-C3 and onboard Li-ion Charger
 - Bootloader and Reset buttons for both microcontrollers
 - SMA connector for 915Mhz stm32wl
-- onbbord Chip antenna for esp32-c3
+- On board Chip antenna for esp32-c3
 - stm32wl power control of the esp32-c3 for low power battery applications. 
 - ADC, DAC, SPI, UART, GPIO accessible on Feather Header. 
 - Optional BME688: temperature pressure humiditity, gas sensor, machine learning
