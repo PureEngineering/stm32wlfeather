@@ -10,7 +10,7 @@
 #include <zephyr/drivers/uart.h>
 #include <zephyr/drivers/lora.h>
 #include <zephyr/drivers/gpio.h>
-
+#include <zephyr/drivers/sensor.h>
 
 #include "uart_driver.h"
 
@@ -175,7 +175,7 @@ void lora_thread(void *unused1, void *unused2, void *unused3)
 
 
     
-
+#define BME680_DEV_NAME DT_LABEL(DT_INST(0, bosch_bme680))
 
 void main(void)
 {
@@ -185,7 +185,30 @@ void main(void)
 	printk("**       STM32WL LoRa demo     **\n");
 	printk("*********************************\n");
 	printk("COMPILE DATE/TIME %s %s\n", __DATE__, __TIME__);
+	const struct device *bme = device_get_binding(BME680_DEV_NAME);
+	const struct device *acc = device_get_binding(DT_LABEL(DT_INST(0, st_lis2dw12)));
+	if(device_is_ready(bme)){
+		struct sensor_value temp, hum, pres;
+		sensor_sample_fetch(bme);
+		sensor_channel_get(bme, SENSOR_CHAN_AMBIENT_TEMP, &temp);
+		sensor_channel_get(bme, SENSOR_CHAN_HUMIDITY, &hum);
+		sensor_channel_get(bme, SENSOR_CHAN_PRESS, &pres);		
+		printk("Temperature: %d.%03d\n", temp.val1, temp.val2);
+		printk("Humidity: %d.%03d\n", hum.val1, hum.val2);
+		printk("Pressure: %d.%03d\n", pres.val1, pres.val2);
+	}
 
+	if(device_is_ready(acc)){
+		struct sensor_value acc_x, acc_y, acc_z;
+		sensor_sample_fetch(acc);
+		sensor_channel_get(acc, SENSOR_CHAN_ACCEL_X, &acc_x);
+		sensor_channel_get(acc, SENSOR_CHAN_ACCEL_Y, &acc_y);
+		sensor_channel_get(acc, SENSOR_CHAN_ACCEL_Z, &acc_z);
+		printk("Acceleration X: %d.%03d\n", acc_x.val1, acc_x.val2);
+		printk("Acceleration Y: %d.%03d\n", acc_y.val1, acc_y.val2);
+		printk("Acceleration Z: %d.%03d\n", acc_z.val1, acc_z.val2);
+	}
+	
 	lora_data_t lora_data;
 
 	lora_queue_init(&lora_queue, sizeof(lora_data_t), 10);
