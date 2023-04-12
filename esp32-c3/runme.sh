@@ -74,7 +74,7 @@ west_update_for_esp()
 
 }
 
-copy_build_to_release_description="create a report of the board info"
+copy_build_to_release_description="copy bin to release"
 copy_build_to_release()
 {
     env
