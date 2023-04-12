@@ -25,6 +25,9 @@ There is a ./runme.sh script one can use to build and flash the code more easily
 - Optional BME688: temperature pressure humiditity, gas sensor, machine learning
 - Optional LIS2DTW12TR: accelerometer 
 - Optional Li-ion Battery connector
+![alt text](https://raw.githubusercontent.com/PureEngineering/stm32wlfeather/main/release/front.jpg?raw=true)
+![alt text](https://raw.githubusercontent.com/PureEngineering/stm32wlfeather/main/release/back.jpg?raw=true)
+
 
 # Features
 - Uses latest Zephyr Project for both the esp32-c3 as well as the stm32wl
@@ -43,3 +46,7 @@ Zephyr Project Based example. Takes the USB uart data and relays it to the uart 
 - Custom Lora USB/WiFi basestation
 - Amazon sidewalk sensor
 - LoRaWAN®, Sigfox, W-MBUS, mioty connected sensor
+
+
+# Schematic
+![alt text](https://raw.githubusercontent.com/PureEngineering/stm32wlfeather/main/release/Schematic.png?raw=true)
