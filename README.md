@@ -12,6 +12,9 @@ https://docs.zephyrproject.org/latest/develop/getting_started/index.html
 For ubuntu 22.04 users
 There is a ./runme.sh script one can use to build and flash the code more easily. 
 
+if using the uart instead of the SDW jtag the latest version of stm32flash is needed. (PA9 and PA10 pins need to be wired)
+https://gitlab.com/stm32flash/stm32flash
+
 # Hardware
 - Feather sized: 2.0" x 0.9" x 0.3" (51mm x 23mm x 8mm) without headers
 - esp32-c3: USB<->uart, WiFi, BLE
